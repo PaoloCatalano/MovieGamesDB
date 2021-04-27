@@ -1,0 +1,343 @@
+@import url("https://fonts.googleapis.com/css2?family=Contrail+One&family=Mansalva&family=Nosifer&family=Open+Sans&display=swap");
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  /* primary/main color */
+  --clr-primary-5: #780000;
+  --clr-primary-8: #c1121f;
+  --clr-primary-9: #f48990;
+  /* darkest grey - used for headings */
+  --clr-grey-1: #003049;
+  --clr-grey-3: #669bbc;
+  /* grey used for paragraphs */
+  --clr-grey-10: #fdf0d5;
+  --clr-white: #fff;
+  --clr-red-dark: #780000;
+  --red: #c1121e8f;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+  /* Fonts */
+  --font-primary: "Contrail One", sans-serif;
+  --font-secondary: "Mansalva", sans-serif;
+  --font-horror: "Nosifer", sans-serif;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+::selection {
+  background: var(--clr-primary-9);
+  color: var(--clr-primary-5);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  font-size: 5vw;
+  border-radius: var(--radius);
+  background: linear-gradient(-180deg, #c1121f, #780000);
+  text-align: center;
+  padding: 0.7rem;
+  color: var(--clr-grey-10);
+  position: relative;
+  text-shadow: 19px 20px 4px #c1121e8f, 1px 1px var(--clr-primary-5);
+  overflow: hidden;
+  font-family: var(--font-primary);
+}
+
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-3);
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+/*  global classes */
+b {
+  font-family: var(--font-primary);
+}
+.logo {
+  display: grid;
+  place-items: center;
+  margin-top: 3rem;
+}
+@media screen and (max-width: 500px) {
+  .logo img {
+    width: 100vw;
+  }
+}
+/* section */
+.section {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+
+@media screen and (min-width: 992px) {
+  .section {
+    width: 95vw;
+  }
+}
+/*
+=============== 
+Search
+===============
+*/
+.search-form {
+  width: 90vw;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+.form-input {
+  width: 100%;
+  border: transparent;
+  max-width: 600px;
+  background: var(--clr-white);
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  color: var(--clr-grey-3);
+  letter-spacing: var(--spacing);
+  margin-top: 1rem;
+}
+.error {
+  color: var(--clr-red-dark);
+  text-transform: capitalize;
+  padding-top: 0.5rem;
+  letter-spacing: var(--spacing);
+  font-family: var(--font-horror);
+  font-size: 3rem;
+}
+/*
+=============== 
+Loading
+===============
+*/
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+    border-radius: 50%;
+  }
+}
+
+.loading {
+  width: 6rem;
+  height: 6rem;
+  margin: 0 auto;
+  margin-top: 10rem;
+  border-radius: 50%;
+  /* colore come sfondo */
+  border: 3px solid var(--clr-grey-10);
+  /* sfumature sempre piu chiare */
+  border-top-color: var(--clr-primary-5);
+  border-left-color: var(--clr-primary-8);
+  border-bottom-color: var(--clr-primary-9);
+  animation: spinner 0.5s linear infinite;
+}
+
+/*
+=============== 
+Movies
+===============
+*/
+.movies {
+  width: 90vw;
+  max-width: var(--max-width);
+  display: grid;
+  gap: 2rem;
+  margin: 0 auto;
+  padding-bottom: 5rem;
+  padding-top: 3rem;
+}
+.movie {
+  position: relative;
+  overflow: hidden;
+}
+.movie img {
+  width: 100%;
+  height: 400px;
+  display: block;
+  object-fit: cover;
+}
+.movie-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: #c1121e8f;
+  transform: translateY(100%);
+  transition: var(--transition);
+}
+.movie-info h4 {
+  color: var(--clr-white);
+  margin-bottom: 0.25rem;
+}
+.movie-info p {
+  margin-bottom: 0;
+  color: var(--clr-white);
+}
+.movie:hover .movie-info {
+  transform: translateY(0);
+}
+@media screen and (min-width: 576px) {
+  .movies {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+}
+
+/*
+=============== 
+Single Movie
+===============
+*/
+
+.single-movie {
+  width: 90vw;
+  max-width: var(--max-width);
+  margin: 4rem auto;
+  display: grid;
+  gap: 2rem;
+}
+.single-movie img {
+  width: 100%;
+  display: block;
+}
+.single-movie p {
+  max-width: 35em;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  line-height: 1.8;
+}
+.btn {
+  text-transform: capitalize;
+  padding: 0.25rem 0.5rem;
+  background: var(--clr-primary-5);
+  color: var(--clr-white);
+  border-radius: var(--radius);
+  display: inline-block;
+  margin-top: 0.5rem;
+  letter-spacing: var(--spacing);
+  transition: var(--transition);
+}
+.btn:hover {
+  background: var(--clr-primary-8);
+}
+@media screen and (min-width: 992px) {
+  .single-movie {
+    grid: 1fr auto / 1fr 2fr;
+  }
+}
+.page-error {
+  text-align: center;
+  padding: 2rem;
+}
+
+.textBcg {
+  width: 74%;
+  padding: 3rem;
+}
+@media screen and (min-width: 992px) {
+  .textBcg {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 470px) {
+  .textBcg {
+    padding: 0.5rem;
+    font-size: 1vw;
+  }
+  .textBcg p {
+    font-size: 5vw;
+  }
+}
+
+footer {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border-top: dashed 1px var(--clr-grey-1);
+  padding-top: 1rem;
+}
+footer p {
+  margin: 0.5rem;
+}
+footer a,
+footer a:visited {
+  color: var(--clr-primary-5);
+}
+footer a:hover {
+  color: var(--clr-primary-8);
+}
