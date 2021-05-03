@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "./Footer";
 import { useParams, Link } from "react-router-dom";
 import useFetch from "./useFetch";
 
